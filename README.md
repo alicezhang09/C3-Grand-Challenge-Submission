@@ -5,7 +5,7 @@
 This repository contains out submission to the 2020 C3.ai Grand Challenge. A quick overview of all the files you can find here:
 
 ## Code File
-[**Analysis and data processing.ipynb**](https://htmlpreview.github.io/?https://github.com/bmeg310ubc/bmeg310/blob/master/Groups.html): This is the notebook we used to combine processed data and run machine learning algorithms. You can find a pdf version with the output for each cell in the [pdf files folder](https://htmlpreview.github.io/?https://github.com/bmeg310ubc/bmeg310/blob/master/Groups.html)
+[**Analysis and data processing.ipynb**](https://github.com/alicezhang09/C3-Grand-Challenge-Submission/blob/main/Code/Analysis%20and%20data%20processing.ipynb): This is the notebook we used to combine processed data and run machine learning algorithms. You can find a pdf version with the output for each cell in the [pdf files folder](https://github.com/alicezhang09/C3-Grand-Challenge-Submission/tree/main/pdf%20files)
 
 **Instruction**: Please follow this link to find information regarding your projects [link](https://github.com/bmeg310ubc/bmeg310/blob/master/Final%20Project/Final_Project_Overview.md)
 
