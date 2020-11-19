@@ -1,4 +1,4 @@
-# C3 AI Grand Challenge
+# C3.ai Grand Challenge
 
 ## Welcome to our Git Repository
 
