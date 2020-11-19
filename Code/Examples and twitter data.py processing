@@ -19,10 +19,10 @@ from matplotlib.colors import rgb2hex,Normalize
 from matplotlib.patches import Polygon
 
 os.getcwd() 
-os.chdir('C:\\Users\\xinli\\Downloads\\c3aidatalake-notebooks-python\\c3aidatalake-notebooks-python') 
+os.chdir('C:\\Users\\Downloads\\c3aidatalake-notebooks-python\\c3aidatalake-notebooks-python') 
 os.getcwd() 
 import c3aidatalake
-os.chdir('C:\\Users\\xinli')
+os.chdir('C:\\Users')
 print("pandas version", pd.__version__)
 assert pd.__version__[0] >= "1", "To use this notebook, upgrade to the newest version of pandas. See https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html for details."
 
@@ -252,7 +252,7 @@ rslt_df2 = survey.loc[survey['startTime'] < '2020-05-16']
 #reformatting location
 rslt_df2["location.id"] = rslt_df2["location.id"].str.replace("_UnitedStates", "")
 
-#s.environ["PROJ_LIB"] = "C:\\Users\\xinli\\Anaconda3\\Library\\share"; #fixr
+#s.environ["PROJ_LIB"] = "C:\\Users\\Anaconda3\\Library\\share"; #fixr
 
 #subset with only location and mask intent before May 16
 may2 = rslt_df2[["location.id","coronavirusIntent_Mask"]]
@@ -281,7 +281,7 @@ dictionary_difference = difference2['Score_diff'].to_dict()
 # Lambert Conformal map of lower 48 states.
 m = Basemap(llcrnrlon=-119,llcrnrlat=22,urcrnrlon=-64,urcrnrlat=49,
         projection='lcc',lat_1=33,lat_2=45,lon_0=-95)
-shp_info = m.readshapefile('C:\\Users\\xinli\\Downloads\\st99_d00','states',drawbounds=True)
+shp_info = m.readshapefile('C:\\Users\\Downloads\\st99_d00','states',drawbounds=True)
 
 colors={}
 statenames=[]
@@ -607,14 +607,14 @@ for i in range(len(df3)):
     
 df3['location.id'] = a
     
-dataframe=pd.read_csv("C:\\Users\\xinli\\Downloads\\corona_tweets_51.csv", header=None)
+dataframe=pd.read_csv("C:\\Users\\Downloads\\corona_tweets_51.csv", header=None)
 dataframe=dataframe[0]
 dataframe.to_csv("ready_corona_tweets_51.csv", index=False, header=None)
 
 
 #replace empty locations with nan and remove them
-dataframe=pd.read_csv("C:\\Users\\xinli\\Downloads\\ready_corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
-dataframe2=pd.read_csv("C:\\Users\\xinli\\Downloads\\corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+dataframe=pd.read_csv("C:\\Users\\Downloads\\ready_corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+dataframe2=pd.read_csv("C:\\Users\\Downloads\\corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
 dataframe2.columns = ['id','sentiment']
 dataframe2['id']=dataframe2['id'].astype(np.int64)
 dataframe.columns = dataframe.iloc[0]
@@ -624,17 +624,17 @@ dataframe.dropna(subset=['user_location'], inplace=True)
 dataframe['id']=dataframe['id'].astype(np.int64)
 
 
-List = open("C:\\Users\\xinli\\Downloads\\city_names.txt",).readlines()
+List = open("C:\\Users\\Downloads\\city_names.txt",).readlines()
 del List[0]
 del List[1]
 
-jun1=pd.read_csv("C:\\Users\\xinli\\Downloads\\c3-75_june1.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
-jun1_sentiment=pd.read_csv("C:\\Users\\xinli\\Downloads\\corona_tweets_75.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+jun1=pd.read_csv("C:\\Users\\Downloads\\c3-75_june1.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+jun1_sentiment=pd.read_csv("C:\\Users\\Downloads\\corona_tweets_75.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
 check = filter_tweets(jun1,jun1_sentiment)
-jun9=pd.read_csv("C:\\Users\\xinli\\Downloads\\Twitter_Data_June9.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
-jun9_sentiment=pd.read_csv("C:\\Users\\xinli\\Downloads\\corona_tweets_83.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
-may8=pd.read_csv("C:\\Users\\xinli\\Downloads\\ready_corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
-may8_sentiment=pd.read_csv("C:\\Users\\xinli\\Downloads\\corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+jun9=pd.read_csv("C:\\Users\\Downloads\\Twitter_Data_June9.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+jun9_sentiment=pd.read_csv("C:\\Users\\\Downloads\\corona_tweets_83.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+may8=pd.read_csv("C:\\Users\\Downloads\\ready_corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
+may8_sentiment=pd.read_csv("C:\\Users\\Downloads\\corona_tweets_51.csv", header=None,error_bad_lines=False, index_col=False, dtype='unicode')
 checkmay8=filter_tweets(may8,may8_sentiment)
 check = filter_tweets(jun1,jun1_sentiment)
 check2 = filter_tweets(jun9,jun9_sentiment)
